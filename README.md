@@ -3,7 +3,7 @@
 This is a simple and interactive Rock Paper Scissors game built using HTML, CSS, and JavaScript.
 
 <p align="center">
-  <img  src="https://github.com/rohanvron/Rock-Paper-Scissors/blob/master/img/ui.PNG?raw=true">
+  <img  src="https://github.com/rohanvron/Rock-Paper-Scissors/blob/master/img/uinewtheme.PNG?raw=true">
 </p>
 
 ## Features
@@ -33,3 +33,5 @@ This is a simple and interactive Rock Paper Scissors game built using HTML, CSS,
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+Check Out the <a href="https://rohanvron.github.io/Rock-Paper-Scissors/"> DEMO </a>
