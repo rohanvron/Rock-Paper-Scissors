@@ -1,3 +1,9 @@
+// Dark-Light Mode
+document.body.classList.toggle('dark-mode', document.querySelector('.mode-toggle input').checked);
+document.querySelector('.mode-toggle input').addEventListener('change', function() {
+    document.body.classList.toggle('dark-mode', this.checked);
+});
+
 //disabling Right-click
 document.addEventListener('contextmenu', event => event.preventDefault());
 
