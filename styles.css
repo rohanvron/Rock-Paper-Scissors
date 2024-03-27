@@ -5,25 +5,124 @@
     box-sizing: border-box;
 }
 
+
 body {
-    background-color: #000000;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
 }
+
+.dark-mode {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+}
+
+.dark-mode .resetBtn > button, .dark-mode .rulesBtn > button {
+    color: rgb(255, 255, 255);
+}
+
+/* Theme Toggle Switch */
+
+.icon-moon, .icon-sun {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: yellow;
+    transition: .4s ease;
+  }
+
+  input:checked + .slider .icon-moon {
+    display: none;
+  }
+  
+    input:not(:checked) + .slider .icon-sun {
+    display: none;
+  }
+
+.mode-toggle {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    right: 25px;
+  }
+  
+  .mode-toggle input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(0, 0, 0);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #000000;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    background-color: #ffffff;
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+/* header style*/
 
 header {
     background: rgb(41, 41, 41);
     padding: 5px;
     border-bottom: 3px solid #47c6bd;
     box-shadow: 0 0 10px 3px #47c6bd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
 header > h1 {
-    color: white;
     text-align: center;
     font-family: "Alata", sans-serif;
     font-size: 30px;
     margin: 2px;
     animation: flicker 1.5s infinite alternate;
     color: #ffffffd2;
+    width: 100%;
 }
 
 /* Flickering animation */
@@ -32,14 +131,14 @@ header > h1 {
   0%, 75%, 9%, 80%, 45%, 8%, 70% {
 
       text-shadow:
-      0 0 1px #fff,
-      0 0 0px #e60f0f,
-      0 0 3px #96007d,
-      0 0 0px rgb(134, 207, 183),
-      0 0 5px #0fa,
-      0 0 0px #0fa,
-      0 0 1px rgb(23, 12, 83),
-      0 0 2px rgb(125, 226, 192);
+      0 0 1px #777777,
+      0 0 0px #292929,
+      0 0 3px #b6b6b6,
+      0 0 0px rgb(255, 255, 255),
+      0 0 5px rgb(128, 128, 128),
+      0 0 0px rgb(12, 12, 12),
+      0 0 1px rgb(202, 202, 202),
+      0 0 2px rgb(24, 24, 24);
   
   }
   
@@ -49,28 +148,28 @@ header > h1 {
 }
 
 #scoreLabel {
-    color: white;
     font-size: 20px;
     font-family: "Alata", sans-serif;
     padding-top: 25px;
     padding-bottom: 5px;
     margin: 1px;
     text-align: center;
-
+    transition: all 0.3s ease;
 }
 
 .scoreBoard {
     margin: 20px auto;
     padding: 30px 30px;
-    width: 500px;
+    max-width: 500px;
+    height: auto;
     border: 10px solid #47c6bd;
     border-radius: 500px;
     
     font-size: 50px;
 
     text-align: center;
-    color: white;
     position: relative;
+    transition: all 0.3s ease;
 }
 
 .badge {
@@ -102,7 +201,6 @@ header > h1 {
 .result {
     font-size: 35px;
     padding-top: 15px;
-    color: white;
 }
 
 .result > p {
@@ -124,7 +222,6 @@ header > h1 {
     padding: 10px;
     padding-bottom: 5px;
     transition: all 0.3s ease;
-    color: #ffffff;
     font-family: "Alata", sans-serif;
 }
 
@@ -148,6 +245,8 @@ header > h1 {
 .choice:hover img{
     transform: scale(2) translateY(-10px);
 }
+
+/* Win-lose-draw choice border Glow */
 
 .greenGlow {
     border: 3px solid #43ec4c;
@@ -175,7 +274,6 @@ header > h1 {
 }
 
 .resetBtn > button {
-    color: white;
     background-color: transparent;
     font-size: 15px;
     font-family: 'Alata', sans-serif;
@@ -199,7 +297,6 @@ header > h1 {
 }
 
 .rulesBtn > button {
-    color: white;
     background-color: transparent;
     font-size: 15px;
     font-family: 'Alata', sans-serif;
@@ -223,13 +320,13 @@ header > h1 {
 #infoBox {
     position: fixed;
     z-index: 1;
-    left: -5%;
+    left: 0%;
     top: 0;
     width: 100%;
     height: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.432);
 }
 
 .info-content {
@@ -241,6 +338,7 @@ header > h1 {
     padding: 30px 40px;
     border: 1px solid #888;
     width: 50%;
+    left: -7%;
     position: relative;
     border: 3px solid #47c6bd;
     border-radius: 10px;
