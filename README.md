@@ -8,9 +8,11 @@ This is a simple and interactive Rock Paper Scissors game built using HTML, CSS,
 
 ## Features
 
-- User vs CPU gameplay: The game pits you against the computer in an epic match of Rock Paper Scissors.
+- User vs CPU gameplay: The game puts you against the computer in an epic match of Rock Paper Scissors.
 - Score tracking: Keep track of your wins and losses with a simple and intuitive score tracking system.
 - Buttons: Click on the 'Reset' button to reset the scores, and 'Rules' button to view the game rules.
+- Responsive: This Game is responsive and can be played on a variety of devices, including smartphones, tablets, and computers.
+- Theme Toggle: For user preference, a dark mode toggle switch is included to switch between a light and dark theme.
 
 ## How to Play
 
