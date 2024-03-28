@@ -59,7 +59,7 @@ function lose(userChoice, cpuChoice) {
 }
 
 function draw(userChoice, cpuChoice) {
-    resultDiv_p.innerHTML = `${convertToWord(userChoice)} is equals to ${convertToWord(cpuChoice)}. <span style="color:grey;">It's a Draw</span>`;
+    resultDiv_p.innerHTML = `${convertToWord(userChoice)} is equal to ${convertToWord(cpuChoice)}. <span style="color:grey;">It's a Draw</span>`;
     document.getElementById(userChoice).classList.add('greyGlow');
     setTimeout(function() { document.getElementById(userChoice).classList.remove('greyGlow') }, 1000);
 }
