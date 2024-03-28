@@ -35,7 +35,7 @@ function getCpuChoice(){
 function convertToWord(move) {
     if (move === "r") return "Rock";
     if (move === "p") return "Paper";
-    return "Scissors";
+    return "Scissor";
 }
 
 // adding a condition for scoreboard and result
