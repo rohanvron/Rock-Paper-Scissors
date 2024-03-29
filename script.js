@@ -1,7 +1,29 @@
 // Dark-Light Mode
-document.body.classList.toggle('dark-mode', document.querySelector('.mode-toggle input').checked);
-document.querySelector('.mode-toggle input').addEventListener('change', function() {
-    document.body.classList.toggle('dark-mode', this.checked);
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the toggle input element
+    const toggleInput = document.querySelector('.mode-toggle input');
+
+    // Check if the theme preference is stored in local storage
+    const storedTheme = localStorage.getItem('theme');
+
+    // Set the initial theme based on the stored preference (if available)
+    if (storedTheme) {
+        document.body.classList.toggle('dark-mode', storedTheme === 'dark');
+        toggleInput.checked = storedTheme === 'dark';
+    } else {
+        // Default to dark mode if no preference is stored
+        document.body.classList.add('dark-mode');
+        toggleInput.checked = true;
+    }
+
+    // Add an event listener to the toggle input
+    toggleInput.addEventListener('change', function() {
+        // Toggle the dark mode class on the body
+        document.body.classList.toggle('dark-mode', this.checked);
+
+        // Store the theme preference in local storage
+        localStorage.setItem('theme', this.checked ? 'dark' : 'light');
+    });
 });
 
 //disabling Right-click
