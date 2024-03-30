@@ -33,10 +33,12 @@ body {
 
   .icon-moon {
     left: 15px; /* Position moon icon on the left side */
+    text-shadow: 0 0 10px #fffb16;
   }
 
     .icon-sun {
     right: 0px; /* Position sun icon on the right side */
+    text-shadow: 0 0 10px #fffb16;
   }
 
     input:checked + .slider .icon-sun {
@@ -94,7 +96,7 @@ body {
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 0 #ffffff;
   }
   
   input:checked + .slider:before {
@@ -103,14 +105,17 @@ body {
     transform: translateX(26px);
     background-color: #ffffff;
     border-radius: 0 50px 50px 0;
+    box-shadow: 0 0 10px #ffffff;
   }
   
   /* sliders */
   .slider.round {
     border-radius: 34px;
+    border: 1px solid white;
   }
   .slider.round:before {
     width: 29px;
+    box-shadow: 0 0 10px #ffffff;
   }
 
 /* header style*/
