@@ -79,7 +79,7 @@ body {
   .slider:before {
     position: absolute;
     content: "";
-    height: 22px;
+    height: 20px;
     width: 32px;
     left: 5px;
     -webkit-transform: translateX(26px);
