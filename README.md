@@ -3,7 +3,7 @@
 This is a simple and interactive Rock Paper Scissors game built using HTML, CSS, and JavaScript.
 
 <p align="center">
-  <img  src="https://github.com/rohanvron/Rock-Paper-Scissors/blob/master/img/updatedui.PNG?raw=true">
+  <img  src="https://github.com/rohanvron/Rock-Paper-Scissors/blob/master/img/latestUI.PNG?raw=true">
 </p>
 
 ## Features
